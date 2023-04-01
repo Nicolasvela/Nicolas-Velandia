@@ -15,6 +15,9 @@ string boatlength = Console.ReadLine();
 
 Console.WriteLine("Ingrese las coordenadas del barco de la forma ===> x,y");
 
+
+string sea = " ~ ";
+
 int n = 10;
 
     if (n > 10 || n <= 0)
@@ -29,7 +32,7 @@ int n = 10;
     {
         for (int j = 0; j < arrayTablero.GetLength(1); j++)
         {
-            Console.Write(" ~ ");
+            Console.Write(sea);
         }
         Console.Write("\n");
     }
