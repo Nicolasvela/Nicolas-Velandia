@@ -36,7 +36,7 @@ string N = "0";
 string H = "1";
 Console.WriteLine("Ingrese la longitud del barco ");
 string boatlength = Console.ReadLine();
-//int Long= int.Parse(boatlength)-1;
+
 
 
 Console.WriteLine("Ingrese las coordenadas del barco de la forma ===> x,y");
@@ -90,4 +90,3 @@ if (boatposition == N)
 }
 
 // todavida no lo acabo :c
-
