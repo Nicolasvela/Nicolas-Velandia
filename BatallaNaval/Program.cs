@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 
+
+
 Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine("BATALLA NAVAL");
 
@@ -344,7 +346,7 @@ Console.WriteLine("Esta es la posición de su barco, presione cualquier tecla pa
 Console.ReadLine();
 Console.Clear();
 
-//JUGADOR 2
+//JUGADOR 2 :D
 
 
 string fail = "@";
@@ -380,7 +382,7 @@ int mal = 0; // intentos incorrectos
 // disparar
 
 
-if (boatposition == N)
+if (boatposition == N) // vertical 
 {
     while (bien != int.Parse(boatlength))
     {
@@ -406,16 +408,18 @@ if (boatposition == N)
             {
 
 
+
                 if (boatlength == "2") //barco de 2
                 {
 
 
-                    if (xx == x && yy == y)
+                    if (xx == x && yy == y || xx == x && int.Parse(yy) == int.Parse(y) + 1)
                     {
                         if (xx == $"{j}" && yy == $"{i}")
                         {
                             Console.Write($"  {goal}");
                             bien++;
+
                         }
                         else
                         {
@@ -424,19 +428,7 @@ if (boatposition == N)
 
                     }
 
-                    if (xx == x && int.Parse(yy) == int.Parse(y) + 1)
-                    {
-                        if (xx == $"{j}" && yy == $"{i}")
-                        {
-                            Console.Write($"  {goal}");
-                            bien++;
-                        }
-                        else
-                        {
-                            Console.Write($"  {sea}");
-                        }
 
-                    }
 
                     if (xx != x || yy != y && int.Parse(yy) != int.Parse(y) + 1)
                     {
@@ -451,14 +443,128 @@ if (boatposition == N)
                         }
 
                     }
+
+                }
+
+
+                if (boatlength == "3") //barco de 3
+                {
+
+
+                    if (xx == x && yy == y || xx == x && int.Parse(yy) == int.Parse(y) + 1 || xx == x && int.Parse(yy) == int.Parse(y) + 2)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {goal}");
+                            bien++;
+
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+
+
+                    if (xx != x || yy != y && int.Parse(yy) != int.Parse(y) + 1 && int.Parse(yy) != int.Parse(y) + 2)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {fail}");
+                            mal++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+                }
+
+                if (boatlength == "4") //barco de 4
+                {
+
+
+                    if (xx == x && yy == y || xx == x && int.Parse(yy) == int.Parse(y) + 1 || xx == x && int.Parse(yy) == int.Parse(y) + 2 || xx == x && int.Parse(yy) == int.Parse(y) + 3)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {goal}");
+                            bien++;
+
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+
+
+                    if (xx != x || yy != y && int.Parse(yy) != int.Parse(y) + 1 && int.Parse(yy) != int.Parse(y) + 2 && int.Parse(yy) != int.Parse(y) + 3)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {fail}");
+                            mal++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+                }
+
+                if (boatlength == "5") //barco de 5
+                {
+
+
+                    if (xx == x && yy == y || xx == x && int.Parse(yy) == int.Parse(y) + 1 || xx == x && int.Parse(yy) == int.Parse(y) + 2 || xx == x && int.Parse(yy) == int.Parse(y) + 3 || xx == x && int.Parse(yy) == int.Parse(y) + 4)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {goal}");
+                            bien++;
+
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+
+
+                    if (xx != x || yy != y && int.Parse(yy) != int.Parse(y) + 1 && int.Parse(yy) != int.Parse(y) + 2 && int.Parse(yy) != int.Parse(y) + 3 && int.Parse(yy) != int.Parse(y) + 4)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {fail}");
+                            mal++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
                 }
 
 
 
-
             }
-            Console.Write("\n");
 
+
+            Console.Write("\n");
+            
 
 
 
@@ -480,7 +586,12 @@ if (boatposition == N)
     Console.Write(bien + mal); ;
 }//finN
 
-if (boatposition == H)
+
+
+
+
+
+if (boatposition == H) // horizontal 
 {
     while (bien != int.Parse(boatlength))
     {
@@ -510,21 +621,7 @@ if (boatposition == H)
                 {
 
 
-                    if (xx == x && yy == y)
-                    {
-                        if (xx == $"{j}" && yy == $"{i}")
-                        {
-                            Console.Write($"  {goal}");
-                            bien++;
-                        }
-                        else
-                        {
-                            Console.Write($"  {sea}");
-                        }
-
-                    }
-
-                    if (int.Parse(xx) == int.Parse(x) + 1 && yy == y)
+                    if (xx == x && yy == y || int.Parse(xx) == int.Parse(x) + 1 && yy == y)
                     {
                         if (xx == $"{j}" && yy == $"{i}")
                         {
@@ -539,6 +636,106 @@ if (boatposition == H)
                     }
 
                     if (yy != y || xx != x && int.Parse(xx) != int.Parse(x) + 1)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {fail}");
+                            mal++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+                }
+
+
+                if (boatlength == "3") //barco de 3
+                {
+
+
+                    if (xx == x && yy == y || int.Parse(xx) == int.Parse(x) + 1 && yy == y || int.Parse(xx) == int.Parse(x) + 2 && yy == y)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {goal}");
+                            bien++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+                    if (yy != y || xx != x && int.Parse(xx) != int.Parse(x) + 1 && int.Parse(xx) != int.Parse(x) + 2)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {fail}");
+                            mal++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+                }
+
+                if (boatlength == "4") //barco de 4
+                {
+
+
+                    if (xx == x && yy == y || int.Parse(xx) == int.Parse(x) + 1 && yy == y || int.Parse(xx) == int.Parse(x) + 2 && yy == y || int.Parse(xx) == int.Parse(x) + 3 && yy == y)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {goal}");
+                            bien++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+                    if (yy != y || xx != x && int.Parse(xx) != int.Parse(x) + 1 && int.Parse(xx) != int.Parse(x) + 2 && int.Parse(xx) != int.Parse(x) + 3)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {fail}");
+                            mal++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+                }
+
+                if (boatlength == "5") //barco de 5
+                {
+
+
+                    if (xx == x && yy == y || int.Parse(xx) == int.Parse(x) + 1 && yy == y || int.Parse(xx) == int.Parse(x) + 2 && yy == y || int.Parse(xx) == int.Parse(x) + 3 && yy == y || int.Parse(xx) == int.Parse(x) + 4 && yy == y)
+                    {
+                        if (xx == $"{j}" && yy == $"{i}")
+                        {
+                            Console.Write($"  {goal}");
+                            bien++;
+                        }
+                        else
+                        {
+                            Console.Write($"  {sea}");
+                        }
+
+                    }
+
+                    if (yy != y || xx != x && int.Parse(xx) != int.Parse(x) + 1 && int.Parse(xx) != int.Parse(x) + 2 && int.Parse(xx) != int.Parse(x) + 3 && int.Parse(xx) != int.Parse(x) + 4)
                     {
                         if (xx == $"{j}" && yy == $"{i}")
                         {
@@ -579,4 +776,3 @@ if (boatposition == H)
     Console.Write("Total intentos =  ");
     Console.Write(bien + mal); ;
 }//finH
-
